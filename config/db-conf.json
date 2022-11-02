@@ -1,0 +1,7 @@
+{
+	"host" : "Ip del Server",
+	"port" : 9999,
+	"user" : "Usuario Postgres",
+	"password" : "clave usaurio",
+	"database" : "Esquema DB"
+}
