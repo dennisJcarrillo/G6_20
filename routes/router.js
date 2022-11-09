@@ -1,7 +1,8 @@
 "use strict";
 //LAS RUTAS
 var  PasajeroController = require("../controllers/pasajero-controller")
-var  VueloController = require("../controllers/vuelo-controller"),
+var  VueloController = require("../controllers/vuelo-controller")
+var  ReservaController = require("../controllers/reserva-controller"),
   express = require("express"),
   router = express.Router();
 

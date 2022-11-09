@@ -7,7 +7,7 @@ ReservaModel = () => {};
 ReservaModel.getAll = (cb) => conn.query("SELECT * FROM RESERVA", cb);
 
 ReservaModel.getOne = (id, cb) => 
-    conn.query("SELECT * FROM RESERVA WHERE numero_reservacion= 10", id, cb);
+    conn.query("SELECT * FROM RESERVA WHERE numero_reservacion= $1", [id], cb);
 
 ReservaModel.post = (data, cb) =>
     conn.query("call public.sp_reserva_insert ($1,$2,$3,$4,$5,$6,$7)",
