@@ -27,8 +27,8 @@ VueloController.getAll = (req, res, next) => {
 }
 
 VueloController.getOne = (req, res, next) => {
-    let p_codigo_vuelo = req.params.codigo_vuelo
-    VueloModel.getOne(p_codigo_vuelo, (err, rows) => {
+    let codigo_vuelo = req.body.codigo_vuelo;
+    VueloModel.getOne(codigo_vuelo, (err, rows) => {
         if (err) 
         {
             let locals = {
@@ -116,10 +116,10 @@ VueloController.put = (req, res, next) => {
 }
 
 VueloController.delete = (req, res, next) => {
-    let p_codigo_vuelo = req.params.p_codigo_vuelo
+    let p_codigo_vuelo = {codigo_vuelo:req.body.codigo_vuelo}
     console.log(p_codigo_vuelo)
 
-    VueloModel.delete(p_codigo_vuelo, (err, rows) => {
+    VueloModel.delete(p_codigo_vuelo.codigo_vuelo, (err, rows) => {
         console.log(err, '---', rows)
         if (err) {
             let locals = {
@@ -154,4 +154,4 @@ VueloController.error404 = (req, res, next) => {
 }
 
 
-module.exports = VueloController
+module.exports = VueloController;
