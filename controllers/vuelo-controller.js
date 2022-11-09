@@ -27,7 +27,8 @@ VueloController.getAll = (req, res, next) => {
 }
 
 VueloController.getOne = (req, res, next) => {
-    VueloModel.getOne((err, rows) => {
+    let p_codigo_vuelo = req.params.codigo_vuelo
+    VueloModel.getOne(p_codigo_vuelo, (err, rows) => {
         if (err) 
         {
             let locals = {

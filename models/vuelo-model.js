@@ -7,7 +7,7 @@ VueloModel = () => {};
 VueloModel.getAll = (cb) => conn.query("SELECT * FROM VUELO", cb);
 
 VueloModel.getOne = (id, cb) => 
-    conn.query("SELECT * FROM VUELO WHERE codigo_vuelo= 18963", id, cb);
+    conn.query("SELECT * FROM VUELO WHERE codigo_vuelo= $1", [id], cb);
 
 VueloModel.post = (data, cb) =>
     conn.query("call public.sp_vuelo_insert ($1,$2,$3,$4,$5,$6,$7)",
