@@ -106,7 +106,7 @@ PasajeroController.put = (req, res, next) => {
 }
 
 PasajeroController.delete = (req, res, next) => {
-  let p_codigo_Pasajero = req.params.codigo_pasajero;
+  let p_codigo_Pasajero = req.body.codigo_pasajero;
   console.log(p_codigo_Pasajero);
   PasajeroModel.delete(p_codigo_Pasajero, (err, rows) => {
     console.log(err, '---', rows);

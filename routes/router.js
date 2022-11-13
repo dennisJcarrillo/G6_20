@@ -22,11 +22,11 @@ router
   .delete("/pasajero/eliminar/:codigo_pasajero", PasajeroController.delete)
 
    //****RUTAS ENTIDAD RESERVA****
-   .get("/reserva/getall", ReservaController.getAll)
-   .get("/reserva/getone/:numero_reservacion", ReservaController.getOne)
-   .post("/reserva/insertar/:numero_reservacion", ReservaController.post)
-   .put("/reserva/actualizar/:numero_reservacion", ReservaController.put)
-   .delete("/reserva/eliminar/:numero_reservacion", ReservaController.delete)
+  .get("/reserva/getall", ReservaController.getAll)
+  .get("/reserva/getone/:numero_reservacion", ReservaController.getOne)
+  .post("/reserva/insertar/:numero_reservacion", ReservaController.post)
+  .put("/reserva/actualizar/:numero_reservacion", ReservaController.put)
+  .delete("/reserva/eliminar/:numero_reservacion", ReservaController.delete)
   .use(ReservaController.error404)
   .use(PasajeroController.error404)
   .use(VueloController.error404);
