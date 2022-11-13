@@ -27,7 +27,7 @@ ReservaController.getAll = (req, res, next) => {
 }
 
 ReservaController.getOne = (req, res, next) => {
-    let p_numero_reservacion = req.params.numero_reservacion
+    let p_numero_reservacion = req.body.numero_reservacion
     ReservaModel.getOne(p_numero_reservacion, (err, rows) => {
         if (err) 
         {
@@ -116,10 +116,10 @@ ReservaController.put = (req, res, next) => {
 }
 
 ReservaController.delete = (req, res, next) => {
-    let p_numero_reservacion = req.params.numero_reservacion
+    let p_numero_reservacion = {numero_reservacion:req.body.numero_reservacion}
     console.log(p_numero_reservacion)
 
-    ReservaModel.delete(p_numero_reservacion, (err, rows) => {
+    ReservaModel.delete(p_numero_reservacion.numero_reservacion, (err, rows) => {
         console.log(err, '---', rows)
         if (err) {
             let locals = {
